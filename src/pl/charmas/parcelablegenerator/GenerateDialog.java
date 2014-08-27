@@ -48,7 +48,7 @@ public class GenerateDialog extends DialogWrapper {
 
         for (PsiField field : allFields) {
             // Exclude static fields
-            if (!field.hasModifierProperty(PsiModifier.STATIC)) {
+            if (!field.hasModifierProperty(PsiModifier.STATIC) && !field.hasModifierProperty(PsiModifier.TRANSIENT)) {
                 fields[i++] = field;
             }
         }
